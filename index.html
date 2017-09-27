@@ -1,0 +1,45 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+void main(){
+	setlocale(LC_ALL, "ru");
+	int main();
+	{
+		const int SIZE = 15;
+		int ourArr[SIZE];
+		srand(time(NULL));
+		int maxchar = 0; // для записи максимального
+		int minchar = 20; // для записи минимального
+
+			//=================================================================
+			int buff = 0; // для временного хранения значения, при перезаписи
+
+			for (int i = 0; i < SIZE - 1; i++) // 
+			{
+				// вложенный цикл проходит от четвертого элемента 
+				// до первого, находит с помощью if самое "легкое" значение,
+				// сравнивая соседние пары элементов,
+				// и поднимает его в нулевую ячейку массива
+				for (int j = SIZE - 1; j > i; j--)
+				{
+					if (ourArr[j] < ourArr[j - 1])
+					{
+						buff = ourArr[j - 1];
+						ourArr[j - 1] = ourArr[j];
+						ourArr[j] = buff;
+					}
+				}
+			}
+			cout << "\n";
+			cout << "\nСамое большое: " << maxchar << endl;
+			cout << "\nСамое маленькое: " << minchar << endl;
+
+
+		}
+	for (j = size - 1; j > i; j--) {    // внутренний цикл прохода
+            if(a[j - 1] > a[j]) {
+                x = a[j - 1];
+                a[j - 1] = a[j];
+                a[j] = x;
+            }
